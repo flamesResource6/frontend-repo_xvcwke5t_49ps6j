@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { Mountain, Globe2, Bot, Factory, Flag } from 'lucide-react';
+import { useLanguage } from './LanguageContext';
 
 function About() {
+  const { t } = useLanguage();
   const badges = [
     { icon: Mountain, label: 'South Tyrol HQ' },
     { icon: Globe2, label: 'Sino-European DNA' },
@@ -22,7 +24,7 @@ function About() {
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <h2 className="text-3xl sm:text-4xl font-semibold text-white">From the Alps to the Pearl River Delta</h2>
+            <h2 className="text-3xl sm:text-4xl font-semibold text-white">{t('about_title')}</h2>
             <p className="mt-4 text-white/80">Voltiq blends Alpine reliability with Chinese engineering speed. Our team designs and ships multilingual AI systems that automate complex operations across Europe and Asia.</p>
             <p className="mt-3 text-white/70">Headquartered in South Tyrol, we build with a global mindset—privacy, security, and measurable outcomes first.</p>
             <div className="mt-6 flex flex-wrap gap-3">

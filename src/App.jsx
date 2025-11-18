@@ -7,22 +7,31 @@ import About from './components/About';
 import Footer from './components/Footer';
 import BackgroundFX from './components/BackgroundFX';
 import { ScrollProgress } from './components/Transitions';
+import { LanguageProvider } from './components/LanguageContext';
+import Timeline from './components/Timeline';
+import Logos from './components/Logos';
+import Founders from './components/Founders';
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white relative">
-      <ScrollProgress />
-      <BackgroundFX />
+    <LanguageProvider>
+      <div className="min-h-screen bg-slate-950 text-white relative">
+        <ScrollProgress />
+        <BackgroundFX />
 
-      <Navbar />
-      <Hero />
-      <About />
-      <Features />
-      <Industries />
-      <CTA />
+        <Navbar />
+        <Hero />
+        <About />
+        <Timeline />
+        <Logos />
+        <Features />
+        <Industries />
+        <Founders />
+        <CTA />
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
 

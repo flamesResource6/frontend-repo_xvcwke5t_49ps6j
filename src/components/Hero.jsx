@@ -1,7 +1,9 @@
 import Spline from '@splinetool/react-spline';
 import { motion } from 'framer-motion';
+import { useLanguage } from './LanguageContext';
 
 function Hero() {
+  const { t } = useLanguage();
   return (
     <section className="relative min-h-[82vh] flex items-center overflow-hidden">
       {/* Background gradient aura */}
@@ -17,17 +19,17 @@ function Hero() {
         <div className="py-10">
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white ring-1 ring-white/15">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-            Based in South Tyrol • 全球团队 Chinese engineering excellence
+            {t('hero_badge')}
           </motion.div>
           <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white">
-            Automate your operations with Voltiq AI
+            {t('hero_title')}
           </h1>
           <p className="mt-5 text-lg text-white/80 max-w-xl">
-            A multilingual AI chatbot engineered by our team in South Tyrol with strong Chinese engineering roots. We streamline processes, reduce response times, and integrate with your tools — securely.
+            {t('hero_sub')}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#contact" className="inline-flex rounded-full px-5 py-3 text-sm font-medium bg-white text-slate-900 hover:bg-slate-100 transition">Request a demo</a>
-            <a href="#solutions" className="inline-flex rounded-full px-5 py-3 text-sm font-medium bg-white/10 text-white hover:bg-white/15 ring-1 ring-white/15 transition">Explore solutions</a>
+            <a href="#contact" className="inline-flex rounded-full px-5 py-3 text-sm font-medium bg-white text-slate-900 hover:bg-slate-100 transition">{t('hero_cta_primary')}</a>
+            <a href="#solutions" className="inline-flex rounded-full px-5 py-3 text-sm font-medium bg-white/10 text-white hover:bg-white/15 ring-1 ring-white/15 transition">{t('hero_cta_secondary')}</a>
           </div>
           <div className="mt-8 flex items-center gap-6 text-xs text-white/70">
             <div>Secure by design</div>

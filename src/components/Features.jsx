@@ -1,6 +1,8 @@
 import { Cpu, Workflow, ShieldCheck, Languages, LineChart } from "lucide-react";
+import { useLanguage } from './LanguageContext';
 
 function Features() {
+  const { t } = useLanguage();
   const items = [
     { icon: Cpu, title: "AI-first architecture", desc: "LLM-powered understanding, custom tools and retrieval for your domain." },
     { icon: Workflow, title: "Workflow automation", desc: "Automate ticketing, approvals, reporting and more across your stack." },
@@ -14,8 +16,8 @@ function Features() {
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_0%,rgba(168,85,247,0.08),transparent_50%),radial-gradient(circle_at_80%_50%,rgba(99,102,241,0.06),transparent_40%)]" />
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="max-w-2xl">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white">Built for modern operations</h2>
-          <p className="mt-3 text-white/70">From South Tyrol to the world: an AI chatbot shaped by European quality and Chinese engineering precision.</p>
+          <h2 className="text-3xl sm:text-4xl font-semibold text-white">{t('features_title')}</h2>
+          <p className="mt-3 text-white/70">{t('features_sub')}</p>
         </div>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map(({ icon: Icon, title, desc }) => (
